@@ -1,0 +1,54 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (player) { %>
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">성</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" value="<%= player.first_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">이름</label>
+                    <input type="text" class="form-control" name="last_name" id="last-name" value="<%= player.last_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="username">별명</label>
+                    <input type="text" class="form-control" name="username" id="username" value="<%= player.user_name %>" required disabled title="별명은 변경할 수 없습니다.">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="number">생년월일</label>
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Number" value="<%= player.number %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">사는곳</label>
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected><%= player.position %></option>
+                        <option>서울</option>
+                        <option>대구</option>
+                        <option>부산</option>
+                        <option>대전</option>
+                        <option>제주</option>
+                        <option>광주</option>
+                        <option>경기</option>
+                        <option>충청</option>
+                        <option>경상</option>
+                        <option>전라</option>
+                        <option>강원</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success float-right">연락처 수정</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">항목을 찾지 못했습니다.. 새로운 연락처를 등록하시려면 <a href="/add">여기</a> 를 클릭하십시오.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>
