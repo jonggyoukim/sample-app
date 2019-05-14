@@ -7,7 +7,7 @@ const app = express();
 
 const {getHomePage} = require('./routes/index');
 const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage} = require('./routes/player');
-const port = 8080;
+const port = 8000;
 
 var _host = process.env.MYSQL_SERVICE_HOST ? process.env.MYSQL_SERVICE_HOST : 'localhost';
 var _user = process.env.MYSQL_SERVICE_USER ? process.env.MYSQL_SERVICE_USER : 'test';
