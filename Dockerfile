@@ -1,5 +1,5 @@
 # Node 버젼 8의 이미지를 기본으로 합니다.
-FROM node:8
+FROM node:alpine
 
 # 애플리케이션이 위치할 디렉토리를 생성합니다.
 WORKDIR /user/src/app
